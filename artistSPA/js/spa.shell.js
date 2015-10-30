@@ -36,14 +36,14 @@ spa.shell = (function () {
 
       + '<input type="hidden" name="articleid" id="articleid"  />'
 
-      + '<input type="submit" value="Submit" />'
+      + '<input type="submit" value="Submit"/>'
     + '</form>'
     + '</div>'
     },
     stateMap  = { $container : null },
     jqueryMap = {},
 
-    setJqueryMap, initModule;
+    setJqueryMap, initModule, submitClick;
   //----------------- END MODULE SCOPE VARIABLES ---------------
 
   //-------------------- BEGIN UTILITY METHODS -----------------
@@ -59,6 +59,7 @@ spa.shell = (function () {
   //--------------------- END DOM METHODS ----------------------
 
   //------------------- BEGIN EVENT HANDLERS -------------------
+
   //-------------------- END EVENT HANDLERS --------------------
 
   //------------------- BEGIN PUBLIC METHODS -------------------
