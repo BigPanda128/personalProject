@@ -16,13 +16,17 @@ spa.shell = (function () {
   //---------------- BEGIN MODULE SCOPE VARIABLES --------------
   var
     configMap = {
-      anchor_schema_map : {
-        chat  : { opened : true, closed : true }
-      },
-      resize_interval : 200,
       main_html : String()
-      + '<h1>Artist SPA</h1>'
-      + '<form method="post">'
+      + '<ul class="nav nav-pills" id="navi">'
+      + '<li role="presentation" class="active"><a href="#">Entry</a></li>'
+      + '<li role="presentation"><a href="#">Data</a></li>'
+      + '</ul>'
+      + '<div class="container" id="main">'
+      + '<div class="jumbotron">'
+      + '<h1>Artist Database</h1>'
+      + '<p>Hello fellow artist! Please enter your info as follows below. Thank you!</p>'
+      + '</div>'
+      + '<form method="post" id="entryForm">'
       + 'NAME: <input type="text" name="name" id="name" /><br />'
 
       + 'Email: <input type="text" name="email" id="email" /><br />'
@@ -34,6 +38,7 @@ spa.shell = (function () {
 
       + '<input type="submit" value="Submit" />'
     + '</form>'
+    + '</div>'
     },
     stateMap  = { $container : null },
     jqueryMap = {},

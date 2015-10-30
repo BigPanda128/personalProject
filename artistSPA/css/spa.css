@@ -1,0 +1,13 @@
+body {
+  background-color: blue
+}
+#main {
+  background-color: gray;
+}
+#navi {
+  background-color: white;
+}
+#entryForm {
+  color: Black;
+  font-size: 13;
+}
