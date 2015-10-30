@@ -27,12 +27,12 @@ spa.shell = (function () {
       + '<p>Hello fellow artist! Please enter your info as follows below. Thank you!</p>'
       + '</div>'
       + '<form method="post" id="entryForm">'
-      + 'NAME: <input type="text" name="name" id="name" /><br />'
+      + 'NAME: <input type="text" placeholder="First name" name="name" id="name" /><input type="text" placeholder="Last name" name="name" id="name" /><br />'
 
-      + 'Email: <input type="text" name="email" id="email" /><br />'
+      + 'Email: <input type="text" placeholder="email@domain.com" name="email" id="email" /><br />'
 
       + 'Biography:<br />'
-      + '<textarea name="biography" id="biography"></textarea><br />'
+      + '<textarea name="biography" placeholder="Your story..." id="biography"></textarea><br />'
 
       + '<input type="hidden" name="articleid" id="articleid"  />'
 
