@@ -1,11 +1,16 @@
+
 body {
   background-color: blue
 }
 #main {
-  background-color: gray;
+  background-color: white;
 }
 #navi {
   background-color: white;
+}
+.jumbotron {
+  background-image: radial-gradient(ellipse,green,black);
+  color: white;
 }
 #entryForm {
   color: Black;

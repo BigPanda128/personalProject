@@ -23,13 +23,25 @@ spa.shell = (function () {
       + '</ul>'
       + '<div class="container" id="main">'
       + '<div class="jumbotron">'
+
       + '<h1>Artist Database</h1>'
       + '<p>Hello fellow artist! Please enter your info as follows below. Thank you!</p>'
       + '</div>'
-      + '<form method="post" id="entryForm">'
-      + 'NAME: <input type="text" placeholder="First name" name="name" id="name" /><input type="text" placeholder="Last name" name="name" id="name" /><br />'
+      + '<h3>Data Entry Form </h3>'
+      + 'NAME: <input type="text" placeholder="John Doe" name="name" id="name" /><br />'
+
+      + '<div class="input-group">'
+      + '<span class="input-group-addon" id="sizing-addon2">Name:</span>'
+      + '<input type="text" class="form-control" placeholder="John Doe" aria-describedby="sizing-addon2">'
+      + '</div>'
 
       + 'Email: <input type="text" placeholder="email@domain.com" name="email" id="email" /><br />'
+      + '<div class="input-group">'
+      + '<span class="input-group-addon" id="sizing-addon2">Email:</span>'
+      + '<input type="text" class="form-control" placeholder="Users username" aria-describedby="basic-addon2">'
+      + '<span class="input-group-addon" id="basic-addon2">@</span>'
+      + '<input type="text" class="form-control" placeholder="Users domain">'
+      + '</div>'
 
       + 'Biography:<br />'
       + '<textarea name="biography" placeholder="Your story..." id="biography"></textarea><br />'
@@ -37,7 +49,6 @@ spa.shell = (function () {
       + '<input type="hidden" name="articleid" id="articleid"  />'
 
       + '<input type="submit" value="Submit"/>'
-    + '</form>'
     + '</div>'
     },
     stateMap  = { $container : null },
