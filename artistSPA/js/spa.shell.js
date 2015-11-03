@@ -30,24 +30,16 @@ spa.shell = (function () {
       + '<h3>Data Entry Form </h3>'
       + 'NAME: <input type="text" placeholder="John Doe" name="name" id="name" /><br />'
 
-      + '<div class="input-group">'
-      + '<span class="input-group-addon" id="sizing-addon2">Name:</span>'
-      + '<input type="text" class="form-control" placeholder="John Doe" aria-describedby="sizing-addon2">'
-      + '</div>'
-
       + 'Email: <input type="text" placeholder="email@domain.com" name="email" id="email" /><br />'
-      + '<div class="input-group">'
-      + '<span class="input-group-addon" id="sizing-addon2">Email:</span>'
-      + '<input type="text" class="form-control" placeholder="Users username" aria-describedby="basic-addon2">'
-      + '<span class="input-group-addon" id="basic-addon2">@</span>'
-      + '<input type="text" class="form-control" placeholder="Users domain">'
-      + '</div>'
 
       + 'Biography:<br />'
       + '<textarea name="biography" placeholder="Your story..." id="biography"></textarea><br />'
 
       + '<input type="hidden" name="articleid" id="articleid"  />'
 
+      + '<h4>Upload Images here</h4>'
+      + '<input type="file" name="pic" accept="image/*">'
+      + '<p></p>'
       + '<input type="submit" value="Submit"/>'
     + '</div>'
     },
