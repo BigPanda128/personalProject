@@ -28,9 +28,10 @@ spa.shell = (function () {
       + '<h1>Artist Database</h1>'
       + '<p>Hello fellow artist! Please enter your info as follows below. Thank you!</p>'
       + '</div>'
+
       + '<h3>Data Entry Form </h3>'
       + '<div class="row">'
-      +'<div class="form-group col-md-3">'
+      + '<div class="form-group col-md-3">'
 
       + '<div class="input-group">'
       + '<span class="input-group-addon" id="basic-addon1">Name:</span>'
@@ -60,7 +61,7 @@ spa.shell = (function () {
       + '</div>'
       + '</div>'
 
-      + '<input type="submit" value="Submit"/>'
+      + '<button type="button" class="btn btn-success">Submit</button>'
       + '<p></p>'
     + '</div>'
     },
