@@ -22,25 +22,46 @@ spa.shell = (function () {
       + '<li role="presentation"><a href="#">Browse</a></li>'
       + '</ul>'
       + '<div class="container" id="main">'
+      + '<p></p>'
       + '<div class="jumbotron">'
 
       + '<h1>Artist Database</h1>'
       + '<p>Hello fellow artist! Please enter your info as follows below. Thank you!</p>'
       + '</div>'
       + '<h3>Data Entry Form </h3>'
-      + 'NAME: <input type="text" placeholder="John Doe" name="name" id="name" /><br />'
+      + '<div class="row">'
+      +'<div class="form-group col-md-3">'
 
-      + 'Email: <input type="text" placeholder="email@domain.com" name="email" id="email" /><br />'
+      + '<div class="input-group">'
+      + '<span class="input-group-addon" id="basic-addon1">Name:</span>'
+      + '<input type="text" class="form-control" placeholder="John Doe" aria-describedby="basic-addon1">'
+      + '</div>'
+      + '<br/>'
 
-      + 'Biography:<br />'
-      + '<textarea name="biography" placeholder="Your story..." id="biography"></textarea><br />'
+      + '<div class="input-group">'
+      + '<span class="input-group-addon" id="basic-addon1">Email:</span>'
+      + '<input type="text" class="form-control" placeholder="email@domain.com" aria-describedby="basic-addon1">'
+      + '</div>'
+      + '<br/>'
 
+      + '<div class="input-group">'
+      + '<span class="input-group-addon" id="basic-addon1">Bio:</span>'
+      + '<textarea name="biography" class="form-control" placeholder="Your story..." id="biography"></textarea><br />'
       + '<input type="hidden" name="articleid" id="articleid"  />'
+      + '</div>'
+
+      + '</div>'
+
+      +'<div class="form-group col-md-3">'
 
       + '<h4>Upload Images here</h4>'
       + '<input type="file" name="pic" accept="image/*">'
-      + '<p></p>'
+
+      + '</div>'
+      + '</div>'
+
       + '<input type="submit" value="Submit"/>'
+      + '<p></p>'
     + '</div>'
     },
     stateMap  = { $container : null },
