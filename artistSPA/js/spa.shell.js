@@ -35,19 +35,19 @@ spa.shell = (function () {
 
       + '<div class="input-group">'
       + '<span class="input-group-addon" id="basic-addon1">Name:</span>'
-      + '<input type="text" class="form-control" placeholder="John Doe" aria-describedby="basic-addon1">'
+      + '<input type="text" class="form-control" id="nameInput" placeholder="John Doe" aria-describedby="basic-addon1">'
       + '</div>'
       + '<br/>'
 
       + '<div class="input-group">'
       + '<span class="input-group-addon" id="basic-addon1">Email:</span>'
-      + '<input type="text" class="form-control" placeholder="email@domain.com" aria-describedby="basic-addon1">'
+      + '<input type="text" class="form-control" id="emailInput" placeholder="email@domain.com" aria-describedby="basic-addon1">'
       + '</div>'
       + '<br/>'
 
       + '<div class="input-group">'
       + '<span class="input-group-addon" id="basic-addon1">Bio:</span>'
-      + '<textarea name="biography" class="form-control" placeholder="Your story..." id="biography"></textarea><br />'
+      + '<textarea name="biography" class="form-control" id="bioInput" placeholder="Your story..." id="biography"></textarea><br />'
       + '<input type="hidden" name="articleid" id="articleid"  />'
       + '</div>'
 
@@ -61,7 +61,7 @@ spa.shell = (function () {
       + '</div>'
       + '</div>'
 
-      + '<button type="button" class="btn btn-success">Submit</button>'
+      + '<button type="button" class="btn btn-success" id ="submitButton">Submit</button>'
       + '<p></p>'
     + '</div>'
     },
@@ -78,7 +78,10 @@ spa.shell = (function () {
   // Begin DOM method /setJqueryMap/
   setJqueryMap = function () {
     var $container = stateMap.$container;
-    jqueryMap = { $container : $container };
+    jqueryMap = {
+      $container : $container,
+      $submitButton : $container.find('#submitButton')
+     };
   };
   // End DOM method /setJqueryMap/
   //--------------------- END DOM METHODS ----------------------
@@ -94,6 +97,13 @@ spa.shell = (function () {
     console.log("It works");
     $container.html( configMap.main_html );
     setJqueryMap();
+
+    // handler for submit button click
+    jqueryMap.$submitButton.click(function() {
+      console.log($container.find('#nameInput').val() + ", "
+          + $container.find('#emailInput').val() + ", "
+          + $container.find('#bioInput').val());
+    });
   };
   // End PUBLIC method /initModule/
 
