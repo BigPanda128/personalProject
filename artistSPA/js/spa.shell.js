@@ -72,6 +72,16 @@ spa.shell = (function () {
   //----------------- END MODULE SCOPE VARIABLES ---------------
 
   //-------------------- BEGIN UTILITY METHODS -----------------
+  submitClick = function(name, email, bio) {
+    var newEntry = {
+      "Name"  : name,
+      "Email" : email,
+      "bio"   : bio
+    }
+    console.log('submitClick has run');
+    console.log('New entrys name is ' + newEntry.Name);
+    return newEntry;
+  };
   //--------------------- END UTILITY METHODS ------------------
 
   //--------------------- BEGIN DOM METHODS --------------------
@@ -103,6 +113,9 @@ spa.shell = (function () {
       console.log($container.find('#nameInput').val() + ", "
           + $container.find('#emailInput').val() + ", "
           + $container.find('#bioInput').val());
+      submitClick($container.find('#nameInput').val(),
+          $container.find('#emailInput').val(),
+          $container.find('#bioInput').val());
     });
   };
   // End PUBLIC method /initModule/
