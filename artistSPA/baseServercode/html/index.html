@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+ <!-- head content must come *after* these tags -->
+ <meta charset="utf-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta name="google-site-verification" content="bSX2l42ztWqeT7G7Pg-0ChidTrFwtASqMVZX7Z2Npao" />
+ <meta name="Ryan Postma" content="">
+
+ <title>Artist SPA</title>
+
+ <!-- Our "good enough for now" stylesheet -->
+ <link rel="stylesheet" href="../css/main.css" type="text/css" />
+
+ <!-- id is needed for this stylesheet so it can be swapped out -->
+ <link rel="stylesheet" id="sock_css" href="css/sockstyle.css" type="text/css" />
+
+ <!-- Third-party libraries -->
+ <script src="/lib/jquery-1.11.3.min.js"></script>
+ <link rel="stylesheet" href="/lib/bootstrap-3.3.5/dist/css/bootstrap.min.css">
+ <script src="/lib/bootstrap-3.3.5/dist/js/bootstrap.min.js"></script>
+
+ <script src="../lib/page.js"></script>
+ <script src="../lib/moment.js"></script>
+ <script src="../lib/moment-duration-format.js"></script>
+
+ <!-- Our Javascript -->
+ <script src='../js/spa.js'></script>
+ <script src='../js/spa.shell.js'></script>
+
+ <!-- My css file -->
+ <link href="css/spa.css" rel="stylesheet">
+
+ <!-- Feature modules -->
+ <script src='../js/spa.dates.js'></script>
+ <script src='../js/spa.socket.js'></script>
+ <!-- This next script is "just pretend" for socket.io -->
+ <script src="/socket.io/socket.io.js"></script>
+ <script src="../js/spa.seo.js"></script>
+
+ <!-- Let's get started -->
+ <script>
+  $(function() {
+   spa.initModule($('#spa'));
+  });
+ </script>
+
+</head>
+
+<body>
+ <main id="spa"></main>
+</body>
+
+</html>

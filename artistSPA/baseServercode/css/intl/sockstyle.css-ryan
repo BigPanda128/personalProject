@@ -1,0 +1,4 @@
+#socketIO {
+  background: linear-gradient(to left, black, red, yellow);
+  font-size: 200%;
+};

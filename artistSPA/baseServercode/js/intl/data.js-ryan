@@ -1,0 +1,5 @@
+// Ryan personal "version" of our SPA view
+var dummyPage = '<b>Name: </b>Ryan Postma'
+		+ '<br><b> Address: </b>9982 Arrowhead Ln.'
+		+ '<br><b> Age: </b>20'
+    + '<br><b> Cuisine: </b>German';
