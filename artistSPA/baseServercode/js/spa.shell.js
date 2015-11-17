@@ -78,7 +78,9 @@ spa.shell = (function () {
       "Email" : email,
       "bio"   : bio
     }
-    console.log('submitClick has run');
+
+    var newEntryJSON = JSON.stringify(newEntry);
+    console.log('JSON object: ' + newEntryJSON);
     console.log('New entrys name is ' + newEntry.Name);
     return newEntry;
   };
