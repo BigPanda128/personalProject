@@ -23,7 +23,7 @@ var
   io      = socketIo.listen( server ),
   watchMap = {};
 
-// --- end variable declarations and initialization 
+// --- end variable declarations and initialization
 
   // Watch a file and let clients know if/when one changes
   setWatch = function ( url_path, file_type ) {
@@ -36,7 +36,7 @@ var
         url_path.slice(1),
         function ( current, previous ) {
           console.log( 'file accessed' );
-          // Send notice 
+          // Send notice
           if ( current.mtime !== previous.mtime ) {
             console.log( 'file changed: ' + url_path);
             io.sockets.emit( file_type, url_path );
@@ -61,7 +61,7 @@ var
     next();
 
   app.use( express.static( __dirname + '/' ) );
- 
+
   });
 
   app.use( bodyParser.urlencoded({ extended: false }));
@@ -73,7 +73,7 @@ var
   app.use('/', router);
   app.use(require('prerender-node').set('prerenderToken', 'KpWv54ERZuWdTbB3DO5e'));
 
-// --- End server configuration 
+// --- End server configuration
 
 // --- Start service
 server.listen(8000);
@@ -81,4 +81,14 @@ console.log(
   'Express server listening on port %d in %s mode',
    server.address().port, app.settings.env
 );
+
+app.get('/', function (req, res) {
+  res.sendfile(__dirname + '/index.html');
+});
+
+io.on('connection', function (socket) {
+  socket.on('my other event', function (data) {
+    console.log(data);
+  });
+});
 // --- end app.js

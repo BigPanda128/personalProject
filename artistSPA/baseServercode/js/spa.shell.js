@@ -80,6 +80,11 @@ spa.shell = (function () {
     }
 
     var newEntryJSON = JSON.stringify(newEntry);
+
+    var socket = io.connect('http://localhost:8000');
+    //console.log(data);
+    socket.emit('my other event', newEntry);
+
     console.log('JSON object: ' + newEntryJSON);
     console.log('New entrys name is ' + newEntry.Name);
     return newEntry;
