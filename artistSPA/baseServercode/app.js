@@ -23,6 +23,10 @@ var
   io      = socketIo.listen( server ),
   watchMap = {};
 
+  var mongodb     = require( 'mongodb' ),
+  url = 'mongodb://localhost:27017/artistdb',
+  MongoClient = mongodb.MongoClient;
+
 // --- end variable declarations and initialization
 
   // Watch a file and let clients know if/when one changes
@@ -85,6 +89,44 @@ console.log(
 app.get('/', function (req, res) {
   res.sendfile(__dirname + '/index.html');
 });
+
+io.on('connection', function (socket) {
+  // Remember we're server side here
+  //var writefile = fs.createWriteStream('myFile');
+  //
+  //
+  //                WAIT HERE for upload events to occur
+  //
+  //
+  // (Note we're not really waiting--this is all event driven by socket.io)
+  socket.on('upload', function(data) {
+    console.log(data);
+    // Let's try to save it in the database
+    MongoClient.connect(url, function (err, db) {
+      if (err) {
+        console.log('Unable to connect to the mongoDB server. Error:', err);
+      } else {
+        //HURRAY!! We are connected. :
+        console.log('Connection established to', url);
+      }
+    // Set up to write to the 'artist' collection
+    var collection = db.collection('artists');
+    // Save the data that came with the socket.io message
+    collection.insert(data, function (err, result) {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log('Inserted %d documents into the "artist" collection. The documents inserted with "_id" are:', result.insertedCount, result);
+      }
+      //Close connection
+      db.close();
+      });
+    });
+    // Here's how you write one piece of data which always overwrites the file
+    //writefile.write(JSON.stringify(data));
+    //writefile.write('\n');
+  });
+})
 
 io.on('connection', function (socket) {
   socket.on('my other event', function (data) {
