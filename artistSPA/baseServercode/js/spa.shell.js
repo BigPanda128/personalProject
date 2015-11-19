@@ -56,7 +56,8 @@ spa.shell = (function () {
       +'<div class="form-group col-md-3">'
 
       + '<h4>Upload Images here</h4>'
-      + '<input type="file" name="pic" accept="image/*">'
+      //+ '<input type="file" name="pic" accept="image/*">'
+      + '<input type="file" name="pic" id="picInput" multiple>'
 
       + '</div>'
       + '</div>'
@@ -119,7 +120,8 @@ spa.shell = (function () {
     jqueryMap.$submitButton.click(function() {
       console.log($container.find('#nameInput').val() + ", "
           + $container.find('#emailInput').val() + ", "
-          + $container.find('#bioInput').val());
+          + $container.find('#bioInput').val() + ", "
+          + $container.find('#picInput').val());
       submitClick($container.find('#nameInput').val(),
           $container.find('#emailInput').val(),
           $container.find('#bioInput').val());
