@@ -1,6 +1,6 @@
 /*
  * spa.shell.js
- * Shell module for SPA
+ * Shell module for artistSPA
 */
 
 /*jslint         browser : true, continue : true,
@@ -73,19 +73,25 @@ spa.shell = (function () {
   //----------------- END MODULE SCOPE VARIABLES ---------------
 
   //-------------------- BEGIN UTILITY METHODS -----------------
+
+  //this is the meat and potatos for when i click submit
   submitClick = function(name, email, bio) {
+    //storing the input fields into an object
     var newEntry = {
       "Name"  : name,
       "Email" : email,
       "bio"   : bio
     }
 
+    //converted the object to json format. wasnt needed but good practice
     var newEntryJSON = JSON.stringify(newEntry);
 
     var socket = io('http://localhost:8000');
-    //console.log(data);
+
+    //through a callback to the socket function in app.js with the data
     socket.emit('upload', newEntry);
 
+    //basic construction code to see if i got my data right.
     console.log('JSON object: ' + newEntryJSON);
     console.log('New entrys name is ' + newEntry.Name);
     return newEntry;
@@ -118,6 +124,7 @@ spa.shell = (function () {
 
     // handler for submit button click
     jqueryMap.$submitButton.click(function() {
+      //construction code to make sure button is working
       console.log($container.find('#nameInput').val() + ", "
           + $container.find('#emailInput').val() + ", "
           + $container.find('#bioInput').val() + ", "

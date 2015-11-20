@@ -1,6 +1,6 @@
 /*
  * spa.js
- * OSCON Demo project base script
+ *
 */
 
 var spa = (function () {
