@@ -2,4 +2,5 @@
 Ryan Postma
 
 Repo for my personal project.
-artistSPA is my project code. all other directories are simply code i was using to reference. will delete them in final edit.
+artistSPA is my project code. 
+directions to run are contained in that directory
