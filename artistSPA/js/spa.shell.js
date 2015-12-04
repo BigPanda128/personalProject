@@ -19,7 +19,6 @@ spa.shell = (function () {
       main_html : String()
       + '<ul class="nav nav-pills" id="navi">'
       + '<li role="presentation" class="active"><a href="#">Entry</a></li>'
-      + '<li role="presentation"><a href="#">Browse</a></li>'
       + '</ul>'
       + '<div class="container" id="main">'
       + '<p></p>'
